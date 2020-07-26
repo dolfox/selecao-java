@@ -48,7 +48,7 @@ public class HistoricoDePrecoDeCombustivelResource {
 		
 		historico = historicoService.salvarHistorico(historico);
 		
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{id}")
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(historico.getId()).toUri();
 		
 		return ResponseEntity.created(uri).body(historico);
