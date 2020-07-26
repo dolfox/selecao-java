@@ -47,7 +47,7 @@ public class UsuarioResource {
 		
 		usuario = usuarioService.cadastrarUsuario(usuario);
 		
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{id}")
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(usuario.getId()).toUri();
 		
 		return ResponseEntity.created(uri).body(usuario);
