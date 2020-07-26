@@ -41,7 +41,7 @@ public class CombustivelResource {
 	public ResponseEntity<CombustivelModel> salvarCombustivel(@RequestBody CombustivelModel combustivel) {
 		combustivel = combustivelService.salvarCombustivel(combustivel);
 
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{id}").buildAndExpand(combustivel.getId())
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(combustivel.getId())
 				.toUri();
 
 		return ResponseEntity.created(uri).body(combustivel);
